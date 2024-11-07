@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/05 17:16:59 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/07 11:14:10 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,9 @@ fclean:	clean
 
 re: fclean all
 
-test:
-	cc -c testfile.c -o testfile.o
-	cc -o testfile testfile.o -L. -l ft
+test: unity_test.c libft.a
+	cc -c unity_test.c -o testfile.o
+	cc -o testfile unity_test.c ../Unity/src/unity.c -L. -lft
 	./testfile
 
 .PHONY: all clean fclean re

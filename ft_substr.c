@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:18:00 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/05 16:02:04 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/07 11:54:37 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		substr[0] = 0;
 		return (substr);
 	}
-
+	i = 0;
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
