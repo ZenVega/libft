@@ -12,7 +12,11 @@
 
 CFILES = \
 ft_isalpha.c\
+ft_isalnum.c\
+ft_isascii.c\
 ft_isdigit.c\
+ft_isprint.c\
+ft_memset.c\
 ft_strlen.c\
 ft_strcmp.c\
 ft_substr.c
@@ -32,7 +36,7 @@ all: $(NAME)
 $(NAME): $(OFILES) 
 	ar rcs $(NAME) $(OFILES)
 
-%.o: %.c 
+%.o: %.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -43,7 +47,7 @@ fclean:	clean
 
 re: fclean all
 
-test: unity_test.c libft.a
+test: $(NAME) unity_test.c libft.a
 	cc -c unity_test.c -o testfile.o
 	cc -o testfile unity_test.c ../Unity/src/unity.c -L. -lft
 	./testfile

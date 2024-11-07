@@ -19,6 +19,30 @@ void test_ft_isdigit(void) {
 	TEST_ASSERT_FALSE(ft_isdigit('a'));
 }
 
+void test_ft_isalnum(void) {
+	TEST_ASSERT(ft_isalnum('3'));
+	TEST_ASSERT(ft_isalnum('a'));
+	TEST_ASSERT_FALSE(ft_isdigit(';'));
+}
+
+void test_ft_isascii(void) {
+	TEST_ASSERT(ft_isascii('3'));
+	TEST_ASSERT(ft_isascii('h'));
+	TEST_ASSERT_FALSE(ft_isascii(-1));
+}
+
+void test_ft_isprint(void) {
+	TEST_ASSERT(ft_isprint('3'));
+  TEST_ASSERT_FALSE(ft_isprint('\n'));
+}
+
+void test_ft_memset(void) {
+  char  *str_1 = "hello";
+  char  *str_2 = "hellu";
+  ft_memset(str_1, '*', 2);
+  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 2);
+  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+}
 void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
@@ -42,6 +66,9 @@ int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_ft_isalpha);
     RUN_TEST(test_ft_isdigit);
+    RUN_TEST(test_ft_isalnum);
+    RUN_TEST(test_ft_isascii);
+    RUN_TEST(test_ft_memset);
     RUN_TEST(test_ft_strlen);
     RUN_TEST(test_ft_substr);
     return UNITY_END();

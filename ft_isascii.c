@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:18:24 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/05 13:19:44 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/07 15:11:20 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/07 15:11:21 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(unsigned char c)
-{
-	if (c >= '0' && c <= '9')
+int ft_isascii(unsigned char c)
+{ 
+	if (c >= 0 && c <= 127 )
 		return (1);
 	else
 		return (0);

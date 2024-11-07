@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:18:24 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/05 13:19:44 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/07 16:33:29 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/07 16:33:34 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(unsigned char c)
+int ft_isprint(unsigned char c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+  if (c >= ' ' && c <= '~')
+    return (1);
+  else
+    return (0);
 }
+
