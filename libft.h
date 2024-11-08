@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void bzero(void *s, size_t n);
 int	ft_isalpha(unsigned char c);
 int	ft_isalnum(unsigned char c);
 int	ft_isdigit(unsigned char c);

@@ -9,6 +9,12 @@ void tearDown(void) {
     // clean stuff up here
 }
 
+void test_ft_bzero(void) {
+  char str[] = "hello";
+  bzero(str, 3);
+  TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
+}
+
 void test_ft_isalpha(void) {
 	TEST_ASSERT(ft_isalpha('a'));
 	TEST_ASSERT_FALSE(ft_isalpha('3'));
@@ -45,6 +51,7 @@ void test_ft_memset(void) {
   ft_memset(str_2, '*', 5);
   TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
+
 void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
@@ -66,6 +73,7 @@ void test_ft_substr(void) {
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
+    RUN_TEST(test_ft_bzero);
     RUN_TEST(test_ft_isalpha);
     RUN_TEST(test_ft_isdigit);
     RUN_TEST(test_ft_isalnum);
