@@ -52,6 +52,13 @@ void test_ft_memset(void) {
   TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
+void test_ft_memcpy(void) {
+  char  str_1[] = "world";
+  char  str_2[] = "**rld";
+  ft_memcpy(str_2, str_1, 2);
+  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+}
+
 void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
@@ -79,6 +86,7 @@ int main(void) {
     RUN_TEST(test_ft_isalnum);
     RUN_TEST(test_ft_isascii);
     RUN_TEST(test_ft_memset);
+    RUN_TEST(test_ft_memcpy);
     RUN_TEST(test_ft_strlen);
     RUN_TEST(test_ft_substr);
     return UNITY_END();

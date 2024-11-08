@@ -17,12 +17,13 @@ ft_isalnum.c\
 ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
+ft_memcpy.c\
 ft_memset.c\
 ft_strlen.c\
 ft_strcmp.c\
-ft_substr.c
+ft_substr.c\
 
-OFILES = $(CFILES:.c=.o) 
+OFILES = $(CFILES:.c=.o)
 
 DEPS = libft.h
 
