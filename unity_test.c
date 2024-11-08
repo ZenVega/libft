@@ -37,10 +37,12 @@ void test_ft_isprint(void) {
 }
 
 void test_ft_memset(void) {
-  char  *str_1 = "hello";
-  char  *str_2 = "hellu";
+  char  str_1[] = "world";
+  char  str_2[] = "**rld";
   ft_memset(str_1, '*', 2);
-  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 2);
+  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+  ft_memset(str_1, '*', 5);
+  ft_memset(str_2, '*', 5);
   TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 void test_ft_strlen(void) {

@@ -21,6 +21,7 @@ int	ft_isalnum(unsigned char c);
 int	ft_isdigit(unsigned char c);
 int	ft_isascii(unsigned char c);
 int	ft_isprint(unsigned char c);
+void  *ft_memset(void *s, int c, size_t n);
 int	ft_strcmp(char *s1, char *s2);
 int	ft_strlen(char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
