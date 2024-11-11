@@ -70,6 +70,15 @@ void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
 
+void test_ft_strlcat(void) {
+  const char *str = "Worldjsdhalk";
+  size_t size = 12;
+  char dst[12] = "Hello ";
+  size_t len = ft_strlcat(dst, str, size);
+	TEST_ASSERT_EQUAL_STRING(dst, "Hello World");
+	TEST_ASSERT_EQUAL_INT(len, 18);
+}
+
 void test_ft_strlcpy(void) {
   const char *str = "Hello World";
   char cpy[6];
@@ -105,6 +114,7 @@ int main(void) {
     RUN_TEST(test_ft_memcpy);
     RUN_TEST(test_ft_memmove);
     RUN_TEST(test_ft_strlen);
+    RUN_TEST(test_ft_strlcat);
     RUN_TEST(test_ft_strlcpy);
     RUN_TEST(test_ft_substr);
     return UNITY_END();
