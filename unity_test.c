@@ -70,11 +70,33 @@ void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
 
+void test_ft_strchr(void) {
+	char *str_strchr = "Hello World";
+	TEST_ASSERT_EQUAL_STRING(ft_strchr(str_strchr, 'o'), "o World");
+
+	str_strchr = "Hello World";
+	TEST_ASSERT_EQUAL_STRING(ft_strchr(str_strchr, '\0'), "");
+
+	str_strchr = "Hello World";
+	TEST_ASSERT_NULL(ft_strchr(str_strchr, 'n'));
+}
+
+void test_ft_strrchr(void) {
+	char *str_strrchr = "Hello World";
+	TEST_ASSERT_EQUAL_STRING(ft_strrchr(str_strrchr, 'o'), "orld");
+
+	str_strrchr = "Hello World";
+	TEST_ASSERT_EQUAL_STRING(ft_strrchr(str_strrchr, '\0'), "");
+
+	str_strrchr = "Hello World";
+	TEST_ASSERT_NULL(ft_strrchr(str_strrchr, 'n'));
+}
+
 void test_ft_strlcat(void) {
-  const char *str = "Worldjsdhalk";
+  const char *str_strlcat = "Worldjsdhalk";
   size_t size = 12;
   char dst[12] = "Hello ";
-  size_t len = ft_strlcat(dst, str, size);
+  size_t len = ft_strlcat(dst, str_strlcat, size);
 	TEST_ASSERT_EQUAL_STRING(dst, "Hello World");
 	TEST_ASSERT_EQUAL_INT(len, 18);
 }
@@ -106,6 +128,11 @@ void test_ft_toupper(void) {
   TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
 }
 
+  void test_ft_tolower(void) {
+  TEST_ASSERT_EQUAL_UINT8(ft_tolower('G'), 'g');
+  TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
+}
+
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
@@ -118,10 +145,13 @@ int main(void) {
     RUN_TEST(test_ft_memset);
     RUN_TEST(test_ft_memcpy);
     RUN_TEST(test_ft_memmove);
+    RUN_TEST(test_ft_strchr);
+    RUN_TEST(test_ft_strrchr);
     RUN_TEST(test_ft_strlen);
     RUN_TEST(test_ft_strlcat);
     RUN_TEST(test_ft_strlcpy);
     RUN_TEST(test_ft_substr);
     RUN_TEST(test_ft_toupper);
+    RUN_TEST(test_ft_tolower);
     return UNITY_END();
 }
