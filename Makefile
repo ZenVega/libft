@@ -25,6 +25,7 @@ ft_strlcat.c\
 ft_strlen.c\
 ft_strcmp.c\
 ft_substr.c\
+ft_toupper.c\
 
 OFILES = $(CFILES:.c=.o)
 

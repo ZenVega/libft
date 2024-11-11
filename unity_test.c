@@ -101,6 +101,11 @@ void test_ft_substr(void) {
 	free(result);
 }
 
+void test_ft_toupper(void) {
+  TEST_ASSERT_EQUAL_UINT8(ft_toupper('g'), 'G');
+  TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
+}
+
 // not needed when using generate_test_runner.rb
 int main(void) {
     UNITY_BEGIN();
@@ -117,5 +122,6 @@ int main(void) {
     RUN_TEST(test_ft_strlcat);
     RUN_TEST(test_ft_strlcpy);
     RUN_TEST(test_ft_substr);
+    RUN_TEST(test_ft_toupper);
     return UNITY_END();
 }
