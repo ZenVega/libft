@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-int ft_strlen(char *str);
+size_t ft_strlen(char *str);
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {

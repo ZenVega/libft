@@ -65,8 +65,17 @@ void test_ft_memmove(void) {
   ft_memmove(str_2, str_1, 5);
   TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
+
 void test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
+}
+
+void test_ft_strlcpy(void) {
+  const char *str = "Hello World";
+  char cpy[6];
+  size_t len = ft_strlcpy(cpy, str, 6);
+	TEST_ASSERT_EQUAL_STRING(cpy, "Hello");
+	TEST_ASSERT_EQUAL_INT(len, 11);
 }
 
 void test_ft_substr(void) {
@@ -91,10 +100,12 @@ int main(void) {
     RUN_TEST(test_ft_isdigit);
     RUN_TEST(test_ft_isalnum);
     RUN_TEST(test_ft_isascii);
+    RUN_TEST(test_ft_isprint);
     RUN_TEST(test_ft_memset);
     RUN_TEST(test_ft_memcpy);
     RUN_TEST(test_ft_memmove);
     RUN_TEST(test_ft_strlen);
+    RUN_TEST(test_ft_strlcpy);
     RUN_TEST(test_ft_substr);
     return UNITY_END();
 }
