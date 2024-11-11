@@ -92,6 +92,13 @@ void test_ft_strrchr(void) {
 	TEST_ASSERT_NULL(ft_strrchr(str_strrchr, 'n'));
 }
 
+void test_ft_strncmp(void) {
+	unsigned char strncmp_str_1[6] = "Hello";
+	unsigned char strncmp_str_2[5] = "Help";
+	TEST_ASSERT_EQUAL_INT(0, ft_strncmp(strncmp_str_1, strncmp_str_2, 3));
+	TEST_ASSERT_LESS_THAN(0, ft_strncmp(strncmp_str_1, strncmp_str_2, 5));
+}
+
 void test_ft_strlcat(void) {
   const char *str_strlcat = "Worldjsdhalk";
   size_t size = 12;
@@ -107,6 +114,13 @@ void test_ft_strlcpy(void) {
   size_t len = ft_strlcpy(cpy, str, 6);
 	TEST_ASSERT_EQUAL_STRING(cpy, "Hello");
 	TEST_ASSERT_EQUAL_INT(len, 11);
+
+	len = ft_strlcpy(cpy, str, 0);
+	TEST_ASSERT_EQUAL_INT(len, 11);
+
+	str = "";
+	len = ft_strlcpy(cpy, str, 6);
+	TEST_ASSERT_EQUAL_INT(len, 0);
 }
 
 void test_ft_substr(void) {
@@ -146,6 +160,7 @@ int main(void) {
     RUN_TEST(test_ft_memcpy);
     RUN_TEST(test_ft_memmove);
     RUN_TEST(test_ft_strchr);
+    RUN_TEST(test_ft_strncmp);
     RUN_TEST(test_ft_strrchr);
     RUN_TEST(test_ft_strlen);
     RUN_TEST(test_ft_strlcat);

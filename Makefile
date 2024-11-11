@@ -25,7 +25,7 @@ ft_strlcat.c\
 ft_strlen.c\
 ft_strchr.c\
 ft_strrchr.c\
-ft_strcmp.c\
+ft_strncmp.c\
 ft_substr.c\
 ft_tolower.c\
 ft_toupper.c\
