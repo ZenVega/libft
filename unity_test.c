@@ -61,16 +61,15 @@ void	test_ft_memchr(void) {
 	TEST_ASSERT_NULL(result_2);
 	result_2 = (char *)ft_memchr(memchr_str, 'o', 5 * sizeof(char));
 	TEST_ASSERT_EQUAL_UINT8('o', *result_2);
-	TEST_ASSERT_EQUAL_UINT8
 	}
 
 void	test_ft_memcmp(void) {
-	char	memcmp_1[6] = "Hello!";
-	char	memcmp_2[7] = "Hell-o!";
+	char	memcmp_1[7] = "He\0lo!";
+	char	memcmp_2[8] = "He\0ll-o!";
 	int result = ft_memcmp(memcmp_1, memcmp_2, 4);	
 	TEST_ASSERT_EQUAL_INT(0, result);
-	result = ft_memcmp(memcmp_1, memcmp_2, 5);	
-	TEST_ASSERT_EQUAL_INT(('o' - '-'), result);
+	result = ft_memcmp(memcmp_1, memcmp_2, 6);	
+	TEST_ASSERT_EQUAL_INT(('o' - 'l'), result);
 	}
 
 void	test_ft_memcpy(void) {
