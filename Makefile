@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/07 11:14:10 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/12 15:38:37 by username         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ ft_strlen.c\
 ft_strchr.c\
 ft_strrchr.c\
 ft_strncmp.c\
+ft_strnstr.c\
 ft_substr.c\
 ft_tolower.c\
 ft_toupper.c\

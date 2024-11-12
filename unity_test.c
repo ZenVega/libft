@@ -1,48 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   unity_test.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: username <your@email.com>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 15:28:47 by username          #+#    #+#             */
+/*   Updated: 2024/11/12 15:38:36 by username         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Unity/src/unity.h"
 #include "libft.h"
 
-void	setUp(void) {
-    // set stuff up here
+void	setUp(void)
+{
 }
 
-void	tearDown(void) {
-    // clean stuff up here
+void	tearDown(void)
+{
 }
 
-void	test_ft_bzero(void) {
+void	test_ft_bzero(void)
+{
 	char str[] = "hello";
 	bzero(str, 3);
 	TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
 }
 
-void	test_ft_isalpha(void) {
+void	test_ft_isalpha(void)
+{
 	TEST_ASSERT(ft_isalpha('a'));
 	TEST_ASSERT_FALSE(ft_isalpha('3'));
 }
 
-void	test_ft_isdigit(void) {
+void	test_ft_isdigit(void)
+{
 	TEST_ASSERT(ft_isdigit('3'));
 	TEST_ASSERT_FALSE(ft_isdigit('a'));
 }
 
-void	test_ft_isalnum(void) {
+void	test_ft_isalnum(void)
+{
 	TEST_ASSERT(ft_isalnum('3'));
 	TEST_ASSERT(ft_isalnum('a'));
 	TEST_ASSERT_FALSE(ft_isdigit(';'));
 }
 
-void	test_ft_isascii(void) {
+void	test_ft_isascii(void)
+{
 	TEST_ASSERT(ft_isascii('3'));
 	TEST_ASSERT(ft_isascii('h'));
 	TEST_ASSERT_FALSE(ft_isascii(-1));
 }
 
-void	test_ft_isprint(void) {
+void	test_ft_isprint(void)
+{
 	TEST_ASSERT(ft_isprint('3'));
-  TEST_ASSERT_FALSE(ft_isprint('\n'));
+	TEST_ASSERT_FALSE(ft_isprint('\n'));
 }
 
-void	test_ft_memset(void) {
+void	test_ft_memset(void)
+{
 	char  str_1[] = "world";
 	char  str_2[] = "**rld";
 	ft_memset(str_1, '*', 2);
@@ -88,6 +107,15 @@ void	test_ft_memmove(void) {
 
 void	test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
+}
+
+void	test_ft_strnstr(void) {
+	char str_strnstr_big[12] = "Hello World";
+	char str_strnstr_little[6] = "World";
+	char	*result = ft_strnstr(str_strnstr_big, str_strnstr_little, 15);
+	TEST_ASSERT_EQUAL_STRING("World", result);
+	result = ft_strnstr(str_strnstr_big, str_strnstr_little, 10);
+	TEST_ASSERT_NULL(result);
 }
 
 void	test_ft_strchr(void) {
@@ -183,6 +211,7 @@ int	main(void) {
 	RUN_TEST(test_ft_memmove);
 	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strncmp);
+	RUN_TEST(test_ft_strnstr);
 	RUN_TEST(test_ft_strrchr);
 	RUN_TEST(test_ft_strlen);
 	RUN_TEST(test_ft_strlcat);
