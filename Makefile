@@ -57,7 +57,7 @@ fclean:	clean
 
 re: fclean all
 
-test: $(NAME) unity_test.c libft.a
+test: $(NAME) unity_test.c 
 	cc -c unity_test.c -o testfile.o
 	cc -o testfile unity_test.c ../Unity/src/unity.c -L. -lft
 	./testfile

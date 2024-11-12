@@ -53,9 +53,14 @@ void	test_ft_memset(void) {
 }
 
 void	test_ft_memchr(void) {
-	const int	arr[5] = {1,2,3,4,5};
+	const int	arr[5] = {69,2,563,3,5};
 	int	*result = (int *)ft_memchr(arr, 3, 5 * sizeof(int));
 	TEST_ASSERT_EQUAL_INT(3, *result);
+	char	memchr_str[6] = "Hello!";
+	char	*result_2 = (char *)ft_memchr(memchr_str, '!', 5 * sizeof(char));
+	TEST_ASSERT_NULL(result_2);
+	result_2 = (char *)ft_memchr(memchr_str, 'o', 5 * sizeof(char));
+	TEST_ASSERT_EQUAL_UINT8('o', *result_2);
 	}
 
 void	test_ft_memcpy(void) {
