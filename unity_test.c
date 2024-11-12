@@ -10,9 +10,9 @@ void tearDown(void) {
 }
 
 void test_ft_bzero(void) {
-  char str[] = "hello";
-  bzero(str, 3);
-  TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
+	char str[] = "hello";
+	bzero(str, 3);
+	TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
 }
 
 void test_ft_isalpha(void) {
@@ -43,27 +43,27 @@ void test_ft_isprint(void) {
 }
 
 void test_ft_memset(void) {
-  char  str_1[] = "world";
-  char  str_2[] = "**rld";
-  ft_memset(str_1, '*', 2);
-  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
-  ft_memset(str_1, 'z', 5);
-  ft_memset(str_2, 'z', 5);
-  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+	char  str_1[] = "world";
+	char  str_2[] = "**rld";
+	ft_memset(str_1, '*', 2);
+	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+	ft_memset(str_1, 'z', 5);
+	ft_memset(str_2, 'z', 5);
+	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
 void test_ft_memcpy(void) {
-  char  str_1[] = "world";
-  char  str_2[] = "**rld";
-  ft_memcpy(str_2, str_1, 2);
-  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+	char  str_1[] = "world";
+	char  str_2[] = "**rld";
+	ft_memcpy(str_2, str_1, 2);
+	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
 void test_ft_memmove(void) {
-  char  str_1[] = "world";
-  char  str_2[] = "*****";
-  ft_memmove(str_2, str_1, 5);
-  TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+	char  str_1[] = "world";
+	char  str_2[] = "*****";
+	ft_memmove(str_2, str_1, 5);
+	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
 void test_ft_strlen(void) {
@@ -100,18 +100,18 @@ void test_ft_strncmp(void) {
 }
 
 void test_ft_strlcat(void) {
-  const char *str_strlcat = "Worldjsdhalk";
-  size_t size = 12;
-  char dst[12] = "Hello ";
-  size_t len = ft_strlcat(dst, str_strlcat, size);
+	const char *str_strlcat = "Worldjsdhalk";
+	size_t size = 12;
+	char dst[12] = "Hello ";
+	size_t len = ft_strlcat(dst, str_strlcat, size);
 	TEST_ASSERT_EQUAL_STRING(dst, "Hello World");
 	TEST_ASSERT_EQUAL_INT(len, 18);
 }
 
 void test_ft_strlcpy(void) {
-  const char *str = "Hello World";
-  char cpy[6];
-  size_t len = ft_strlcpy(cpy, str, 6);
+	const char *str = "Hello World";
+	char cpy[6];
+	size_t len = ft_strlcpy(cpy, str, 6);
 	TEST_ASSERT_EQUAL_STRING(cpy, "Hello");
 	TEST_ASSERT_EQUAL_INT(len, 11);
 
@@ -138,35 +138,35 @@ void test_ft_substr(void) {
 }
 
 void test_ft_toupper(void) {
-  TEST_ASSERT_EQUAL_UINT8(ft_toupper('g'), 'G');
-  TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
+	TEST_ASSERT_EQUAL_UINT8(ft_toupper('g'), 'G');
+	TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
 }
 
-  void test_ft_tolower(void) {
-  TEST_ASSERT_EQUAL_UINT8(ft_tolower('G'), 'g');
-  TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
+	void test_ft_tolower(void) {
+	TEST_ASSERT_EQUAL_UINT8(ft_tolower('G'), 'g');
+	TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
 }
 
 // not needed when using generate_test_runner.rb
 int main(void) {
-    UNITY_BEGIN();
-    RUN_TEST(test_ft_bzero);
-    RUN_TEST(test_ft_isalpha);
-    RUN_TEST(test_ft_isdigit);
-    RUN_TEST(test_ft_isalnum);
-    RUN_TEST(test_ft_isascii);
-    RUN_TEST(test_ft_isprint);
-    RUN_TEST(test_ft_memset);
-    RUN_TEST(test_ft_memcpy);
-    RUN_TEST(test_ft_memmove);
-    RUN_TEST(test_ft_strchr);
-    RUN_TEST(test_ft_strncmp);
-    RUN_TEST(test_ft_strrchr);
-    RUN_TEST(test_ft_strlen);
-    RUN_TEST(test_ft_strlcat);
-    RUN_TEST(test_ft_strlcpy);
-    RUN_TEST(test_ft_substr);
-    RUN_TEST(test_ft_toupper);
-    RUN_TEST(test_ft_tolower);
-    return UNITY_END();
+	UNITY_BEGIN();
+	RUN_TEST(test_ft_bzero);
+	RUN_TEST(test_ft_isalpha);
+	RUN_TEST(test_ft_isdigit);
+	RUN_TEST(test_ft_isalnum);
+	RUN_TEST(test_ft_isascii);
+	RUN_TEST(test_ft_isprint);
+	RUN_TEST(test_ft_memset);
+	RUN_TEST(test_ft_memcpy);
+	RUN_TEST(test_ft_memmove);
+	RUN_TEST(test_ft_strchr);
+	RUN_TEST(test_ft_strncmp);
+	RUN_TEST(test_ft_strrchr);
+	RUN_TEST(test_ft_strlen);
+	RUN_TEST(test_ft_strlcat);
+	RUN_TEST(test_ft_strlcpy);
+	RUN_TEST(test_ft_substr);
+	RUN_TEST(test_ft_toupper);
+	RUN_TEST(test_ft_tolower);
+	return UNITY_END();
 }
