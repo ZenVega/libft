@@ -6,7 +6,7 @@
 /*   By: username <your@email.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:28:47 by username          #+#    #+#             */
-/*   Updated: 2024/11/12 15:38:36 by username         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:25:21 by username         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,20 @@ void	tearDown(void)
 {
 }
 
+void	test_ft_atoi(void)
+{
+		TEST_ASSERT_EQUAL_INT(470,ft_atoi( "470"));
+		TEST_ASSERT_EQUAL_INT(-72123, ft_atoi("-72123"));
+		TEST_ASSERT_EQUAL_INT(0, ft_atoi("l470"));
+		TEST_ASSERT_EQUAL_INT(47, ft_atoi("47t0"));
+		TEST_ASSERT_EQUAL_INT(0, ft_atoi("f47t0"));
+		TEST_ASSERT_EQUAL_INT(-2147483648, ft_atoi("-2147483648"));
+}
+
 void	test_ft_bzero(void)
 {
 	char str[] = "hello";
-	bzero(str, 3);
+	ft_bzero(str, 3);
 	TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
 }
 
@@ -198,6 +208,7 @@ void	test_ft_toupper(void) {
 // not needed when using generate_test_runner.rb
 int	main(void) {
 	UNITY_BEGIN();
+	RUN_TEST(test_ft_atoi);
 	RUN_TEST(test_ft_bzero);
 	RUN_TEST(test_ft_isalpha);
 	RUN_TEST(test_ft_isdigit);

@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 11:53:04 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/12 15:38:39 by username         ###   ########.fr       */
+/*   Updated: 2024/11/13 10:02:05 by username         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-void	bzero(void *s, size_t n);
+int		ft_atoi(const char *nptr);
+void	ft_bzero(void *s, size_t n);
 int		ft_isalpha(unsigned char c);
 int		ft_isalnum(unsigned char c);
 int		ft_isdigit(unsigned char c);
