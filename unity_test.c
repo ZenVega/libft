@@ -6,7 +6,7 @@
 /*   By: username <your@email.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:28:47 by username          #+#    #+#             */
-/*   Updated: 2024/11/13 10:25:21 by username         ###   ########.fr       */
+/*   Updated: 2024/11/13 11:09:43 by username         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	test_ft_atoi(void)
 		TEST_ASSERT_EQUAL_INT(-72123, ft_atoi("-72123"));
 		TEST_ASSERT_EQUAL_INT(0, ft_atoi("l470"));
 		TEST_ASSERT_EQUAL_INT(47, ft_atoi("47t0"));
-		TEST_ASSERT_EQUAL_INT(0, ft_atoi("f47t0"));
+		TEST_ASSERT_EQUAL_INT(0, ft_atoi("-f47t0"));
 		TEST_ASSERT_EQUAL_INT(-2147483648, ft_atoi("-2147483648"));
 }
 
@@ -36,6 +36,23 @@ void	test_ft_bzero(void)
 	char str[] = "hello";
 	ft_bzero(str, 3);
 	TEST_ASSERT_EQUAL_UINT8_ARRAY(str, "\0\0\0", 3);
+}
+
+void	test_ft_calloc(void)
+{
+		int	*calloc_arr = (int *)ft_calloc(3, sizeof(int));
+		int	expected_arr[3] = {0, 0, 0};
+		TEST_ASSERT_NOT_NULL(calloc_arr);
+		TEST_ASSERT_EQUAL_INT_ARRAY (expected_arr, calloc_arr, 3);
+		free(calloc_arr);
+
+		calloc_arr = (int *)ft_calloc(2147483647, sizeof(int));
+		TEST_ASSERT_NULL(calloc_arr);
+		free(calloc_arr);
+
+		calloc_arr = (int *)ft_calloc(0, sizeof(int));
+		TEST_ASSERT_NOT_NULL(calloc_arr);
+		free(calloc_arr);
 }
 
 void	test_ft_isalpha(void)
@@ -210,6 +227,7 @@ int	main(void) {
 	UNITY_BEGIN();
 	RUN_TEST(test_ft_atoi);
 	RUN_TEST(test_ft_bzero);
+	RUN_TEST(test_ft_calloc);
 	RUN_TEST(test_ft_isalpha);
 	RUN_TEST(test_ft_isdigit);
 	RUN_TEST(test_ft_isalnum);

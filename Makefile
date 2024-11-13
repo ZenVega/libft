@@ -6,13 +6,14 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/13 10:01:17 by username         ###   ########.fr        #
+#    Updated: 2024/11/13 10:30:42 by username         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFILES = \
 ft_atoi.c\
 ft_bzero.c\
+ft_calloc.c\
 ft_isalpha.c\
 ft_isalnum.c\
 ft_isascii.c\
