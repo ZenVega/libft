@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   unity_test.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: username <your@email.com>                  +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 15:28:47 by username          #+#    #+#             */
-/*   Updated: 2024/11/13 12:53:35 by username         ###   ########.fr       */
+/*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/13 17:16:36 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,10 +132,30 @@ void	test_ft_memmove(void) {
 	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
+void	test_ft_split(void)
+{
+		char	to_split[19] = "This_is_a_splitter";
+		char	splitter = '_';
+		char	**result = ft_split(to_split, splitter);
+		int		i;
+		i = 0;
+		while (result[i] != NULL)
+		{
+				printf("%s\n", result[i]);
+				i++;
+		}
+		TEST_ASSERT_EQUAL_INT(4, i);
+		i=0;
+		while (result[i])
+				free(result[i++]);
+		free(result);
+}
+
 void	test_ft_strdup(void)
 {
 		char	strdup_str[12] = "Hello World";
 		char	*strdup_dup = ft_strdup(strdup_str);
+		TEST_ASSERT_NOT_NULL(strdup_dup);
 		TEST_ASSERT_EQUAL_STRING(strdup_str, strdup_dup);
 		free(strdup_dup);
 }
@@ -206,6 +226,15 @@ void	test_ft_strlcpy(void) {
 	TEST_ASSERT_EQUAL_INT(len, 0);
 }
 
+void	test_ft_strtrim(void) {
+		char const	trim_str[15] = " * He* *llo**";
+		char const	to_trim[3] = "* ";
+		char	*result = ft_strtrim(trim_str, to_trim);
+		TEST_ASSERT_NOT_NULL(result);
+		TEST_ASSERT_EQUAL_STRING("He* *llo", result);
+		free(result);
+}
+
 void	test_ft_substr(void) {
 	char *result = ft_substr("Hello World", 6, 5);
 	TEST_ASSERT_EQUAL_STRING(result, "World");
@@ -246,6 +275,7 @@ int	main(void) {
 	RUN_TEST(test_ft_memcmp);
 	RUN_TEST(test_ft_memset);
 	RUN_TEST(test_ft_memmove);
+	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strdup);
 	RUN_TEST(test_ft_strncmp);
@@ -254,6 +284,7 @@ int	main(void) {
 	RUN_TEST(test_ft_strlen);
 	RUN_TEST(test_ft_strlcat);
 	RUN_TEST(test_ft_strlcpy);
+	RUN_TEST(test_ft_strtrim);
 	RUN_TEST(test_ft_substr);
 	RUN_TEST(test_ft_toupper);
 	RUN_TEST(test_ft_tolower);
