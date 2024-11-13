@@ -6,7 +6,7 @@
 /*   By: username <your@email.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:28:47 by username          #+#    #+#             */
-/*   Updated: 2024/11/13 11:09:43 by username         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:53:35 by username         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,14 @@ void	test_ft_memmove(void) {
 	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
 }
 
+void	test_ft_strdup(void)
+{
+		char	strdup_str[12] = "Hello World";
+		char	*strdup_dup = ft_strdup(strdup_str);
+		TEST_ASSERT_EQUAL_STRING(strdup_str, strdup_dup);
+		free(strdup_dup);
+}
+
 void	test_ft_strlen(void) {
 	TEST_ASSERT_EQUAL_INT(ft_strlen("Hello World"), 11);
 }
@@ -239,6 +247,7 @@ int	main(void) {
 	RUN_TEST(test_ft_memset);
 	RUN_TEST(test_ft_memmove);
 	RUN_TEST(test_ft_strchr);
+	RUN_TEST(test_ft_strdup);
 	RUN_TEST(test_ft_strncmp);
 	RUN_TEST(test_ft_strnstr);
 	RUN_TEST(test_ft_strrchr);
