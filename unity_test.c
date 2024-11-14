@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/14 15:18:01 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:33:26 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,13 @@ void	test_ft_memmove(void) {
 	char  str_2[] = "*****";
 	ft_memmove(str_2, str_1, 5);
 	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+}
+
+void	test_ft_putstr_fd(void) 
+{
+		char	*put_str_test = "        _   ,_,   _\n       / `'=) (='` \\ \n      /.-.-.\\ /.-.-.\\\n      `      \"      `\n";
+
+		ft_putstr_fd(put_str_test, 1);
 }
 
 void	test_ft_putchar_fd(void) 
@@ -335,6 +342,7 @@ int	main(void) {
 	RUN_TEST(test_ft_memset);
 	RUN_TEST(test_ft_memmove);
 	RUN_TEST(test_ft_putchar_fd);
+	RUN_TEST(test_ft_putstr_fd);
 	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strdup);

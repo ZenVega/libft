@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/14 14:56:10 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/14 15:31:06 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ ft_memcmp.c\
 ft_memmove.c\
 ft_memset.c\
 ft_putchar_fd.c\
+ft_putstr_fd.c\
 ft_split.c\
 ft_strchr.c\
 ft_strdup.c\
