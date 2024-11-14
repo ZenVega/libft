@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/14 11:03:12 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:01:05 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,6 +238,40 @@ void	test_ft_strlcpy(void) {
 	TEST_ASSERT_EQUAL_INT(len, 0);
 }
 
+char	test_strmapi(unsigned int i, char c)
+{
+		return (c + i);
+}
+
+void	test_ft_strmapi(void)
+{
+		char	*result_strmapi = ft_strmapi("aaaaa", test_strmapi);
+		TEST_ASSERT_NOT_NULL(result_strmapi);
+		TEST_ASSERT_EQUAL_STRING("abcde", result_strmapi);
+		free(result_strmapi);
+
+		result_strmapi = ft_strmapi("", test_strmapi);
+		TEST_ASSERT_NOT_NULL(result_strmapi);
+		TEST_ASSERT_EQUAL_STRING("", result_strmapi);
+		free(result_strmapi);
+
+		result_strmapi = ft_strmapi(NULL, test_strmapi);
+		TEST_ASSERT_NULL(result_strmapi);
+}
+
+void	test_striteri(unsigned int i, char *c)
+{
+		*c = *c + i;
+}
+
+void	test_ft_striteri(void)
+{
+		char	result_striteri[6] = "aaaaa";
+		ft_striteri(result_striteri, test_striteri);
+		TEST_ASSERT_NOT_NULL(result_striteri);
+		TEST_ASSERT_EQUAL_STRING("abcde", result_striteri);
+}
+
 void	test_ft_strtrim(void) {
 		char const	trim_str[15] = " * He* *llo**";
 		char const	to_trim[3] = "* ";
@@ -291,6 +325,8 @@ int	main(void) {
 	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strdup);
+	RUN_TEST(test_ft_striteri);
+	RUN_TEST(test_ft_strmapi);
 	RUN_TEST(test_ft_strncmp);
 	RUN_TEST(test_ft_strnstr);
 	RUN_TEST(test_ft_strrchr);
