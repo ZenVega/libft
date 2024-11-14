@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 # include "libft.h"
-# include <stdlib.h>
+#include <stdlib.h>
 
 static int	get_element_count(char const *s, char c)
 {
@@ -19,12 +19,20 @@ static int	get_element_count(char const *s, char c)
 		int	count;
 		i = 0;
 		count = 0;
-		while (s[i++])
+		int	breaker;
+		breaker = 1;
+		while (s[i])
 		{
-				if (s[i] == c)
+				if (s[i] != c && breaker)
+				{
 						count++;
+						breaker = 0;
+				}
+				else if (s[i] == c)
+						breaker = 1;
+				i++;
 		}
-		return (count + 1);
+		return (count);
 }
 
 static int	get_str_len(char const *s, char c)
@@ -33,7 +41,6 @@ static int	get_str_len(char const *s, char c)
 		i = 0;
 		while (s[i] && s[i] != c)
 				i++;
-		printf("len: %d\n", i);
 		return (i);
 }
 
@@ -55,6 +62,13 @@ static char	*get_str(char const *s, int l)
 		return (buffer);
 }
 
+void	free_all(int i, char **arr)
+{
+		while ( i >= 0)
+				free(arr[i--]);
+		free(arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 		char	**arr;
@@ -68,9 +82,17 @@ char	**ft_split(char const *s, char c)
 		i = 0;
 		while (i < count)
 		{
+				while(*s == c)
+						s++;
 				len = get_str_len(s, c);
-				arr[i++] = get_str(s, len);
-				s += len + 1;
+				if (len)
+						arr[i++] = get_str(s, len);
+				if (arr[i-1] == NULL)
+				{
+						free_all((i - 1), arr);
+						return (NULL);
+				}
+				s += len;
 		}
 		arr[i] = NULL;
 		return (arr);

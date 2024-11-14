@@ -134,19 +134,18 @@ void	test_ft_memmove(void) {
 
 void	test_ft_split(void)
 {
-		char	to_split[19] = "This_is_a_splitter";
+		char	to_split[25] = "__This__is_a_splitter";
 		char	splitter = '_';
 		char	**result = ft_split(to_split, splitter);
 		int		i;
+		char	*result_arr[5] = {"This", "is", "a", "splitter", NULL};
 		i = 0;
 		while (result[i] != NULL)
-		{
-				printf("%s\n", result[i]);
 				i++;
-		}
 		TEST_ASSERT_EQUAL_INT(4, i);
 		i=0;
-		while (result[i])
+		TEST_ASSERT_EQUAL_STRING_ARRAY (result_arr, result, 5);
+		while (result[i] != NULL)
 				free(result[i++]);
 		free(result);
 }
