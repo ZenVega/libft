@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/13 17:17:45 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/14 10:17:37 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ ft_isalnum.c\
 ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
+ft_itoa.c\
 ft_memchr.c\
 ft_memcpy.c\
 ft_memcmp.c\

@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/13 17:16:36 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 11:03:12 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,19 @@ void	test_ft_isascii(void)
 	TEST_ASSERT(ft_isascii('3'));
 	TEST_ASSERT(ft_isascii('h'));
 	TEST_ASSERT_FALSE(ft_isascii(-1));
+}
+
+void	test_ft_itoa(void)
+{
+		char	*itoa_res = ft_itoa(12345);
+		TEST_ASSERT_EQUAL_STRING("12345", itoa_res);
+		free(itoa_res);
+		itoa_res = ft_itoa(-43);
+		TEST_ASSERT_EQUAL_STRING("-43", itoa_res);
+		free(itoa_res);
+		itoa_res = ft_itoa(0);
+		TEST_ASSERT_EQUAL_STRING("0", itoa_res);
+		free(itoa_res);
 }
 
 void	test_ft_isprint(void)
@@ -269,6 +282,7 @@ int	main(void) {
 	RUN_TEST(test_ft_isalnum);
 	RUN_TEST(test_ft_isascii);
 	RUN_TEST(test_ft_isprint);
+	RUN_TEST(test_ft_itoa);
 	RUN_TEST(test_ft_memchr);
 	RUN_TEST(test_ft_memcpy);
 	RUN_TEST(test_ft_memcmp);
