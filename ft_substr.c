@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:18:00 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/13 13:02:38 by username         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:52:01 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -34,6 +34,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
+		substr[i] = '\0';
 	return(substr);
 }
 

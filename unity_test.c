@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/14 13:01:05 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:18:01 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,16 @@ void	test_ft_memmove(void) {
 	char  str_2[] = "*****";
 	ft_memmove(str_2, str_1, 5);
 	TEST_ASSERT_EQUAL_MEMORY(str_1, str_2, 5);
+}
+
+void	test_ft_putchar_fd(void) 
+{
+		char	*put_test = "__testing__¯\\_(ツ)_/¯__shwesting__\n";
+		while (*put_test)
+		{
+				ft_putchar_fd(*put_test, 1);
+				put_test++;
+		}
 }
 
 void	test_ft_split(void)
@@ -303,11 +313,13 @@ void	test_ft_toupper(void) {
 	void	test_ft_tolower(void) {
 	TEST_ASSERT_EQUAL_UINT8(ft_tolower('G'), 'g');
 	TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
-}
+	}
 
 // not needed when using generate_test_runner.rb
 int	main(void) {
 	UNITY_BEGIN();
+	RUN_TEST(test_ft_strmapi);
+	RUN_TEST(test_ft_tolower);
 	RUN_TEST(test_ft_atoi);
 	RUN_TEST(test_ft_bzero);
 	RUN_TEST(test_ft_calloc);
@@ -322,11 +334,11 @@ int	main(void) {
 	RUN_TEST(test_ft_memcmp);
 	RUN_TEST(test_ft_memset);
 	RUN_TEST(test_ft_memmove);
+	RUN_TEST(test_ft_putchar_fd);
 	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
 	RUN_TEST(test_ft_strdup);
 	RUN_TEST(test_ft_striteri);
-	RUN_TEST(test_ft_strmapi);
 	RUN_TEST(test_ft_strncmp);
 	RUN_TEST(test_ft_strnstr);
 	RUN_TEST(test_ft_strrchr);
