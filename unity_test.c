@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 16:12:11 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:32:13 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -367,6 +367,8 @@ void	test_ft_lstadd_front(void)
 		TEST_ASSERT_EQUAL_STRING(" !", init_strct->content);
 
 		TEST_ASSERT_EQUAL_INT(3, ft_lstsize(init_strct));
+		t_list	*last = ft_lstlast(init_strct);
+		TEST_ASSERT_EQUAL_STRING("_World", last->content);
 
 		free(init_strct->next->next);
 		free(init_strct->next);
