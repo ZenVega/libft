@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/14 16:17:51 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/15 13:02:00 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,18 @@ void	test_ft_putchar_fd(void)
 				ft_putchar_fd(*put_test, 1);
 				put_test++;
 		}
+}
+
+void	test_ft_putnbr_fd(void) 
+{
+		ft_putnbr_fd(12, 1);
+		ft_putchar_fd('\n', 1);
+		
+		ft_putnbr_fd(-24212, 1);
+		ft_putchar_fd('\n', 1);
+
+		ft_putnbr_fd(0, 1);
+		ft_putchar_fd('\n', 1);
 }
 
 void	test_ft_split(void)
@@ -342,6 +354,7 @@ int	main(void) {
 	RUN_TEST(test_ft_memset);
 	RUN_TEST(test_ft_memmove);
 	RUN_TEST(test_ft_putchar_fd);
+	RUN_TEST(test_ft_putnbr_fd);
 	RUN_TEST(test_ft_putstr_fd);
 	RUN_TEST(test_ft_split);
 	RUN_TEST(test_ft_strchr);
