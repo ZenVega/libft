@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/14 15:47:44 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:17:51 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	test_ft_calloc(void)
 		TEST_ASSERT_EQUAL_INT_ARRAY (expected_arr, calloc_arr, 3);
 		free(calloc_arr);
 
-		calloc_arr = (int *)ft_calloc(2147483647, sizeof(int));
+		calloc_arr = (int *)ft_calloc(214748364666667, sizeof(int));
 		TEST_ASSERT_NULL(calloc_arr);
 		free(calloc_arr);
 

@@ -6,7 +6,7 @@
 /*   By: username <your@email.com>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 10:29:52 by username          #+#    #+#             */
-/*   Updated: 2024/11/14 15:57:23 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:14:43 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-		size_t i;
+		size_t	i;
+		void	*ptr;
+		int		test;
 		i = 0;
-		if ((int)nmemb * (int)size < 0)
+		test = nmemb * size;
+		if (test/size != nmemb)
 				return (NULL);
-		int	*ptr;
 		if (nmemb == 0 || size == 0)
 		{
-				ptr = (int *)malloc(sizeof(int));
-						return ((void *)ptr);
+				ptr = malloc(1);
+						return (ptr);
 		}
-		ptr = (int *)malloc(nmemb * size);
+		ptr = (void *)malloc(nmemb * size);
 		if (!ptr)
 				return (NULL);
 		return (ft_memset(ptr, 0, nmemb * size));
