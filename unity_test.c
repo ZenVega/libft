@@ -6,12 +6,13 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 13:02:00 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:53:18 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Unity/src/unity.h"
 #include "libft.h"
+#include "libft_bonus.h"
 
 void	setUp(void)
 {
@@ -333,10 +334,19 @@ void	test_ft_toupper(void) {
 	TEST_ASSERT_EQUAL_UINT8(ft_tolower('G'), 'g');
 	TEST_ASSERT_EQUAL_UINT8(ft_toupper('%'), '%');
 	}
+//BONUS
 
-// not needed when using generate_test_runner.rb
+void	test_ft_lstnew(void)
+{
+		char	lst_str[6] = "Hello";
+		t_list	*result = ft_lstnew(lst_str);
+		TEST_ASSERT_EQUAL_STRING("Hello", result->content);
+		free(result);
+}
+
 int	main(void) {
 	UNITY_BEGIN();
+	RUN_TEST(test_ft_lstnew);
 	RUN_TEST(test_ft_strmapi);
 	RUN_TEST(test_ft_tolower);
 	RUN_TEST(test_ft_atoi);

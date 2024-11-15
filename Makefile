@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/15 12:46:27 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/15 14:47:03 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,14 @@ ft_toupper.c\
 
 OFILES = $(CFILES:.c=.o)
 
+CFILES_BONUS = \
+ft_lstnew_bonus.c\
+
+OFILES_BONUS = $(CFILES_BONUS:.c=.o)
+
 DEPS = libft.h
+
+DEPS_BONUS = libft_bonus.h
 
 CC = cc
 
@@ -63,17 +70,23 @@ $(NAME): $(OFILES)
 %.o: %.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+%_bonus.o: %_bonus.c $(DEPS_BONUS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OFILES_BONUS)
+	ar rcs $(NAME) $(OFILES_BONUS) $(OFILES) 
+
 clean:
-	rm -f $(OFILES)
+	rm -f $(OFILES) $(OFILES_BONUS)
 
 fclean:	clean 
 	rm -f $(NAME)
 
 re: fclean all
 
-test: $(NAME) unity_test.c 
+test: bonus unity_test.c 
 	cc $(CFLAGS) -c unity_test.c -o testfile.o
-	cc $(CFLAGS) -o testfile unity_test.c ../Unity/src/unity.c -L. -lft
+	cc $(CFLAGS) -o testfile unity_test.c ../Unity/src/unity.c -L. -lft 
 	./testfile
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
