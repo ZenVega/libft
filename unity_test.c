@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 16:32:13 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:05:30 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -370,9 +370,20 @@ void	test_ft_lstadd_front(void)
 		t_list	*last = ft_lstlast(init_strct);
 		TEST_ASSERT_EQUAL_STRING("_World", last->content);
 
-		free(init_strct->next->next);
-		free(init_strct->next);
-		free(init_strct);
+		char	lst_str_back[2] = "!";
+		t_list	*new_strct_3 = ft_lstnew(lst_str_back);
+		ft_lstadd_back(&init_strct, new_strct_3);
+		last = ft_lstlast(init_strct);
+		TEST_ASSERT_EQUAL_STRING("!", last->content);
+
+
+		t_list	*tmp;
+		while (init_strct)
+		{
+				tmp = init_strct;
+				init_strct = init_strct->next;
+				free(tmp);
+		}
 }
 
 int	main(void) {

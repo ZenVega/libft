@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_bonus.h                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 13:34:27 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 16:58:40 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/15 16:57:43 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/15 17:56:41 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+# include "libft_bonus.h"
 
-
-#ifndef LIBFT_BONUS_H
-# define LIBFT_BONUS_H
-
-typedef struct s_list
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-		void *content;
-		struct s_list *next;
-} t_list;
-
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(void *content);
-int		ft_lstsize(t_list *lst);
-
-#endif
+		t_list	*tmp;
+		if (!*lst && !new)
+				return;
+		tmp = ft_lstlast(*lst);
+		tmp->next = new;
+}

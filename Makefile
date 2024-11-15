@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/15 16:31:33 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/15 16:59:24 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,10 @@ ft_toupper.c\
 OFILES = $(CFILES:.c=.o)
 
 CFILES_BONUS = \
+ft_lstadd_back_bonus.c\
+ft_lstadd_front_bonus.c\
 ft_lstnew_bonus.c\
 ft_lstlast_bonus.c\
-ft_lstadd_front_bonus.c\
 ft_lstsize_bonus.c\
 
 OFILES_BONUS = $(CFILES_BONUS:.c=.o)
