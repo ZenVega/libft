@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 14:53:18 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/15 16:12:11 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -344,8 +344,38 @@ void	test_ft_lstnew(void)
 		free(result);
 }
 
+void	test_ft_lstadd_front(void)
+{
+		char	lst_str_init[7] = "_World";
+		t_list	*init_strct = ft_lstnew(lst_str_init);
+		TEST_ASSERT_EQUAL_STRING("_World", init_strct->content);
+
+		char	lst_str_front[6] = "Hello";
+		t_list	*new_strct = ft_lstnew(lst_str_front);
+		TEST_ASSERT_EQUAL_STRING("Hello", new_strct->content);
+
+		ft_lstadd_front(&init_strct, new_strct);
+		TEST_ASSERT_EQUAL_STRING("Hello", init_strct->content);
+		TEST_ASSERT_EQUAL_STRING("_World", init_strct->next->content);
+
+		TEST_ASSERT_EQUAL_INT(2, ft_lstsize(init_strct));
+		
+		char	lst_str_front_2[6] = " !";
+		t_list	*new_strct_2 = ft_lstnew(lst_str_front_2);
+		TEST_ASSERT_EQUAL_STRING(" !", new_strct_2->content);
+		ft_lstadd_front(&init_strct, new_strct_2);
+		TEST_ASSERT_EQUAL_STRING(" !", init_strct->content);
+
+		TEST_ASSERT_EQUAL_INT(3, ft_lstsize(init_strct));
+
+		free(init_strct->next->next);
+		free(init_strct->next);
+		free(init_strct);
+}
+
 int	main(void) {
 	UNITY_BEGIN();
+	RUN_TEST(test_ft_lstadd_front);
 	RUN_TEST(test_ft_lstnew);
 	RUN_TEST(test_ft_strmapi);
 	RUN_TEST(test_ft_tolower);

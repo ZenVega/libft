@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/15 14:47:03 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/15 15:46:58 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ OFILES = $(CFILES:.c=.o)
 
 CFILES_BONUS = \
 ft_lstnew_bonus.c\
+ft_lstadd_front_bonus.c\
+ft_lstsize_bonus.c\
 
 OFILES_BONUS = $(CFILES_BONUS:.c=.o)
 
@@ -73,7 +75,7 @@ $(NAME): $(OFILES)
 %_bonus.o: %_bonus.c $(DEPS_BONUS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OFILES_BONUS)
+bonus: $(NAME) $(OFILES_BONUS)
 	ar rcs $(NAME) $(OFILES_BONUS) $(OFILES) 
 
 clean:
