@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/16 15:53:25 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:22:07 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -356,6 +356,14 @@ void	first_ex(void *content)
 				str[0] = '!';
 }
 
+void	*first_dollar(void *content)
+{
+		char	*str = content;
+		if (str)
+				str[0] = '$';
+		return (str);
+}
+
 void	test_ft_lstadd_front(void)
 {
 		char	*lst_str_init = ft_strdup("_World");
@@ -395,7 +403,9 @@ void	test_ft_lstadd_front(void)
 		ft_lstiter(init_strct, first_ex);
 		TEST_ASSERT_EQUAL_STRING("!ello", init_strct->content);
 
+		t_list	*mapped = ft_lstmap(init_strct, first_dollar, del);
 		ft_lstclear(&init_strct, del);
+		ft_lstclear(&mapped, del);
 
 		TEST_ASSERT_NULL(init_strct);
 }

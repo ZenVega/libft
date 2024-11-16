@@ -6,7 +6,7 @@
 #    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/16 15:08:54 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/16 15:56:18 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ ft_lstdelone_bonus.c\
 ft_lstiter_bonus.c\
 ft_lstnew_bonus.c\
 ft_lstlast_bonus.c\
+ft_lstmap_bonus.c\
 ft_lstsize_bonus.c\
 
 OFILES_BONUS = $(CFILES_BONUS:.c=.o)
