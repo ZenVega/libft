@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/16 13:50:40 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:53:25 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -343,13 +343,26 @@ void	test_ft_lstnew(void)
 		free(result);
 }
 
+void	del(void *content)
+{
+		if(content)
+				free(content);
+}
+
+void	first_ex(void *content)
+{
+		char	*str = content;
+		if (str)
+				str[0] = '!';
+}
+
 void	test_ft_lstadd_front(void)
 {
-		char	lst_str_init[7] = "_World";
+		char	*lst_str_init = ft_strdup("_World");
 		t_list	*init_strct = ft_lstnew(lst_str_init);
 		TEST_ASSERT_EQUAL_STRING("_World", init_strct->content);
 
-		char	lst_str_front[6] = "Hello";
+		char	*lst_str_front = ft_strdup("Hello");
 		t_list	*new_strct = ft_lstnew(lst_str_front);
 		TEST_ASSERT_EQUAL_STRING("Hello", new_strct->content);
 
@@ -359,7 +372,7 @@ void	test_ft_lstadd_front(void)
 
 		TEST_ASSERT_EQUAL_INT(2, ft_lstsize(init_strct));
 		
-		char	lst_str_front_2[6] = " !";
+		char	*lst_str_front_2 = ft_strdup(" !");
 		t_list	*new_strct_2 = ft_lstnew(lst_str_front_2);
 		TEST_ASSERT_EQUAL_STRING(" !", new_strct_2->content);
 		ft_lstadd_front(&init_strct, new_strct_2);
@@ -369,20 +382,22 @@ void	test_ft_lstadd_front(void)
 		t_list	*last = ft_lstlast(init_strct);
 		TEST_ASSERT_EQUAL_STRING("_World", last->content);
 
-		char	lst_str_back[2] = "!";
+		char	*lst_str_back = ft_strdup("!");
 		t_list	*new_strct_3 = ft_lstnew(lst_str_back);
 		ft_lstadd_back(&init_strct, new_strct_3);
 		last = ft_lstlast(init_strct);
 		TEST_ASSERT_EQUAL_STRING("!", last->content);
 
+		init_strct = init_strct->next;
+		ft_lstdelone(new_strct_2, del);
+		TEST_ASSERT_EQUAL_INT(3, ft_lstsize(init_strct));
 
-		t_list	*tmp;
-		while (init_strct)
-		{
-				tmp = init_strct;
-				init_strct = init_strct->next;
-				free(tmp);
-		}
+		ft_lstiter(init_strct, first_ex);
+		TEST_ASSERT_EQUAL_STRING("!ello", init_strct->content);
+
+		ft_lstclear(&init_strct, del);
+
+		TEST_ASSERT_NULL(init_strct);
 }
 
 int	main(void) {
