@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 13:24:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/16 17:22:07 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:27:12 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -404,6 +404,11 @@ void	test_ft_lstadd_front(void)
 		TEST_ASSERT_EQUAL_STRING("!ello", init_strct->content);
 
 		t_list	*mapped = ft_lstmap(init_strct, first_dollar, del);
+		
+		TEST_ASSERT_EQUAL_STRING("$ello", init_strct->content);
+		TEST_ASSERT_EQUAL_STRING("$World", init_strct->next->content);
+		TEST_ASSERT_EQUAL_STRING("$", init_strct->next->next->content);
+
 		ft_lstclear(&init_strct, del);
 		ft_lstclear(&mapped, del);
 
