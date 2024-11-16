@@ -58,8 +58,6 @@ OFILES_BONUS = $(CFILES_BONUS:.c=.o)
 
 DEPS = libft.h
 
-DEPS_BONUS = libft_bonus.h
-
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=leak
@@ -74,11 +72,11 @@ $(NAME): $(OFILES)
 %.o: %.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%_bonus.o: %_bonus.c $(DEPS_BONUS)
+%_bonus.o: %_bonus.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(NAME) $(OFILES_BONUS)
-	ar rcs $(NAME) $(OFILES_BONUS) $(OFILES) 
+bonus: $(NAME) $(OFILES_BONUS) $(OFILES_BONUS)
+	ar rcs $(NAME) $(OFILES) $(OFILES_BONUS)
 
 clean:
 	rm -f $(OFILES) $(OFILES_BONUS)

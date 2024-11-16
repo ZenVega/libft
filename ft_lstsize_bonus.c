@@ -6,11 +6,11 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:45:35 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 16:15:34 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/16 13:50:08 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

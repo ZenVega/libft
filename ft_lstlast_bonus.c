@@ -6,11 +6,10 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:17:09 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/15 16:35:41 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/16 13:49:22 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft_bonus.h"
 # include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
