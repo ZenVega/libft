@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:33:29 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/07 16:33:34 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/18 18:28:12 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/18 18:29:22 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(unsigned char c)
+int	ft_isprint(unsigned char c)
 {
-  if (c >= ' ' && c <= '~')
-    return (1);
-  else
-    return (0);
+	if (c >= ' ' && c <= '~')
+		return (1);
+	else
+		return (0);
 }
-

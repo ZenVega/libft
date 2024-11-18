@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 15:18:24 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/05 13:19:44 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/18 18:27:47 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/18 18:27:54 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(unsigned char c)
+int	ft_isdigit(unsigned char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

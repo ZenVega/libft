@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 15:11:20 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/07 15:11:21 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/18 18:26:50 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/18 18:27:27 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(unsigned char c)
-{ 
-	if (c >= 0 && c <= 127 )
+int	ft_isascii(unsigned char c)
+{
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

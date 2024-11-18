@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+         #
+#    By: uschmidt <uschmidt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/18 13:05:23 by uschmidt         ###   ########.fr        #
+#    Updated: 2024/11/18 16:35:29 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,15 @@ ft_toupper.c\
 OFILES = $(CFILES:.c=.o)
 
 CFILES_BONUS = \
-ft_lstadd_back_bonus.c\
-ft_lstadd_front_bonus.c\
-ft_lstclear_bonus.c\
-ft_lstdelone_bonus.c\
-ft_lstiter_bonus.c\
-ft_lstnew_bonus.c\
-ft_lstlast_bonus.c\
-ft_lstmap_bonus.c\
-ft_lstsize_bonus.c\
+ft_lstadd_back.c\
+ft_lstadd_front.c\
+ft_lstclear.c\
+ft_lstdelone.c\
+ft_lstiter.c\
+ft_lstnew.c\
+ft_lstlast.c\
+ft_lstmap.c\
+ft_lstsize.c\
 
 OFILES_BONUS = $(CFILES_BONUS:.c=.o)
 

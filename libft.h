@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 11:53:04 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/18 13:04:58 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/18 16:41:43 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/18 19:17:12 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 
 typedef struct s_list
 {
-		void *content;
-		struct s_list *next;
-} t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);

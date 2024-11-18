@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:57:02 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/16 13:49:03 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:58:55 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-		if (new && *lst)
+		if (!new)
+				return;
+		if (!*lst)
 		{
-				new->next = *lst;
 				*lst = new;
+				return;
 		}
+		new->next = *lst;
+		*lst = new;
 }
