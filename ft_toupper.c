@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 12:12:20 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/11 12:12:23 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/19 09:41:58 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/19 09:42:53 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char  ft_toupper(char c)
+char	ft_toupper(int c)
 {
-  int offset;
-  offset = 'a' - 'A';
-  if (c >= 'a' && c <= 'z')
-    return (c - offset);
-  else
-    return (c);
+	int	offset;
+
+	offset = 'a' - 'A';
+	if (c >= 'a' && c <= 'z')
+		return (c - offset);
+	else
+		return (c);
 }

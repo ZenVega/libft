@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: uschmidt <uschmidt@student.42.fr>          +#+  +:+       +#+         #
+#    By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/05 11:30:10 by uschmidt          #+#    #+#              #
-#    Updated: 2024/11/18 16:35:29 by uschmidt         ###   ########.fr        #
+#    Created: 2024/11/19 10:42:30 by uschmidt          #+#    #+#              #
+#    Updated: 2024/11/19 10:42:52 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,15 +49,15 @@ ft_toupper.c\
 OFILES = $(CFILES:.c=.o)
 
 CFILES_BONUS = \
-ft_lstadd_back.c\
-ft_lstadd_front.c\
-ft_lstclear.c\
-ft_lstdelone.c\
-ft_lstiter.c\
-ft_lstnew.c\
-ft_lstlast.c\
-ft_lstmap.c\
-ft_lstsize.c\
+ft_lstadd_back_bonus.c\
+ft_lstadd_front_bonus.c\
+ft_lstclear_bonus.c\
+ft_lstdelone_bonus.c\
+ft_lstiter_bonus.c\
+ft_lstnew_bonus.c\
+ft_lstlast_bonus.c\
+ft_lstmap_bonus.c\
+ft_lstsize_bonus.c\
 
 OFILES_BONUS = $(CFILES_BONUS:.c=.o)
 
@@ -90,10 +90,5 @@ fclean:	clean
 	rm -f $(NAME)
 
 re: fclean all
-
-test: bonus unity_test.c 
-	cc $(CFLAGS) -c unity_test.c -o testfile.o
-	cc $(CFLAGS) -o testfile unity_test.c ../Unity/src/unity.c -L. -lft 
-	./testfile
 
 .PHONY: all clean fclean re bonus

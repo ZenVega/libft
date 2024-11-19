@@ -22,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	if (!ft_strncmp((char *)"-2147483648", (char *)nptr, 11))
 		return (-2147483648);
 	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
-					|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
+		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

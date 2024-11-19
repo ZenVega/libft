@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 12:27:53 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/11 12:27:55 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/19 09:05:11 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/19 09:05:14 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
-		s++;
-	if (*s == c)
-		return ((char *)s);
-	else
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
+	if (!s)
 		return (NULL);
+	while (*s && *s != uc)
+		s++;
+	if (*s == uc)
+		return ((char *)s);
+	return (NULL);
 }

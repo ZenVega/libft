@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 14:08:53 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/18 16:57:21 by uschmidt         ###   ########.fr       */
+/*   Created: 2024/11/19 09:35:51 by uschmidt          #+#    #+#             */
+/*   Updated: 2024/11/19 09:35:56 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

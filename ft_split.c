@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: uschmidt <uschmidt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 15:48:10 by uschmidt          #+#    #+#             */
-/*   Updated: 2024/11/18 19:35:34 by uschmidt         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:04:06 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,44 +63,37 @@ static char	*get_str(char const *s, int l)
 	return (buffer);
 }
 
-void	free_all(int i, char **arr)
+static void	*free_all(int i, char **arr)
 {
 	while (i >= 0)
 		free(arr[i--]);
 	free(arr);
+	return (NULL);
 }
 
-typedef struct s_split
+char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		count;
 	int		i;
 	int		len;
-}	t_split;
 
-char	**ft_split(char const *s, char c)
-{
-	t_split	so;
-
-	so.count = get_element_count(s, c);
-	so.arr = (char **)malloc(sizeof(char *) * (so.count + 1));
-	if (!so.arr)
+	count = get_element_count(s, c);
+	arr = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!arr)
 		return (NULL);
-	so.i = 0;
-	while (so.i < so.count)
+	i = 0;
+	while (i < count)
 	{
 		while (*s == c)
 			s++;
-		so.len = get_str_len(s, c);
-		if (so.len)
-			so.arr[so.i++] = get_str(s, so.len);
-		if (so.arr[so.i - 1] == NULL)
-		{
-			free_all((so.i - 1), so.arr);
-			return (NULL);
-		}
-		s += so.len;
+		len = get_str_len(s, c);
+		if (len)
+			arr[i++] = get_str(s, len);
+		if (arr[i - 1] == NULL)
+			return (free_all((i - 1), arr));
+		s += len;
 	}
-	so.arr[so.i] = NULL;
-	return (so.arr);
+	arr[i] = NULL;
+	return (arr);
 }
