@@ -77,9 +77,6 @@ $(NAME): $(OFILES)
 %.o: %.c $(DEPS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%_bonus.o: %_bonus.c $(DEPS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
 bonus: $(NAME) $(OFILES_BONUS) $(OFILES_BONUS)
 	ar rcs $(NAME) $(OFILES) $(OFILES_BONUS)
 
