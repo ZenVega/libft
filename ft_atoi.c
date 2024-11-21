@@ -19,8 +19,6 @@ int	ft_atoi(const char *nptr)
 
 	neg = 1;
 	result = 0;
-	if (!ft_strncmp((char *)"-2147483648", (char *)nptr, 11))
-		return (-2147483648);
 	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
 		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
